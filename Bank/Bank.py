@@ -11,7 +11,8 @@ class Bank:
         self.deposit_acceptance = None
 
     # Function to verify if the password is correct
-    def _verify_password(self):
+    
+    def __verify_password(self):
         trying_password = str(
             input(f"Please type the password for {self.holder}'s account: "))
         if trying_password == self._password:
@@ -28,7 +29,7 @@ class Bank:
         withdraw_yes_or_no.lower().strip()
         if withdraw_yes_or_no == "1" or withdraw_yes_or_no == "yes":
             if self._balance + self.limit > value:
-                Bank._verify_password(self)
+                Bank.__verify_password(self)
                 if self.autorization == True:
                     self._balance -= value
                     print("Operation accepted")
@@ -103,4 +104,3 @@ Lucas_account = Conta_do_Itau_Unibanco(
     123456789, 557.23, "Lucas", 500, "131008")
 LZs_account = Conta_do_Banco_do_Brasil(987654321, 0.0, "LZ", 50.0, "LZ123")
 
-Lucas_account.info
