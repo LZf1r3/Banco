@@ -31,37 +31,37 @@ class Bank:
                 if self.autorization == True:
                     self._balance -= value
                     print("Operation accepted")
-                    self.withdraw_done = True
+                    Bank.withdraw_done = True
                 else:
                     print("Wrong password! Operation canceled")
-                    self.withdraw_done = False
+                    Bank.withdraw_done = False
             else:
                 print(f"Operation canceled. the holder {self.holder} don't have the enough quantity of ${value}")
-                self.withdraw_done = False
+                Bank.withdraw_done = False
         else:
             print("Operation canceled")
-            self.withdraw_done = False
+            Bank.withdraw_done = False
 
     #Function to deposit the money
     def deposit(self, value,):
-        print(f"Deposit of ${value} in the {self.holder}'s account. Do you want to continue?")
+        print(f"Deposit of ${value} to the {self.holder}'s account. Do you want to continue?")
         deposit_yes_or_no = str(input("(1)yes (2)no "))
         deposit_yes_or_no.lower().strip()
         if deposit_yes_or_no == "1" or deposit_yes_or_no == "yes":
             self._balance += value
             print(f"Deposit of ${value} to the holder {self.holder} made with success")
-            self.deposit_acceptance = True
+            Bank.deposit_acceptance = True
         else:
             print("Operation cancelled")
-            self.deposit_acceptance = False
+            Bank.deposit_acceptance = False
 
-    #Function to transfer
+    #Function to transfer money from one account to the other
     def transfer(self, destiny, value):
         self.withdraw(value)
-        if self.withdraw_done == True:
+        if Bank.withdraw_done == True:
             destiny.deposit(value)
-            if self.deposit_acceptance == True:
-                print("Operation completed")
+            if Bank.deposit_acceptance == True:
+                print("Trasferation operation completed")
             else:
                 self._balance += value
                 print(f"ERROR")
@@ -82,6 +82,4 @@ class Conta_do_Itau_Unibanco(Bank):
 
 Lucas_account = Conta_do_Itau_Unibanco(123456789, 557.23, "Lucas", 500, "131008")
 LZs_account   = Conta_do_Itau_Unibanco(987654321, 0.0, "LZ", 50.0, "LZ123")
-Lucas_account.transfer(LZs_account, 50)
-print(Lucas_account._balance)
-print(LZs_account._balance)
+
