@@ -93,8 +93,7 @@ class Bank:
 account_test_1 = Bank("xxxxxxxx", "xpto", 000.00, 999.99, "3.1415592653") 
 account_test_2 = Bank("yyyyyyyy", "otpx", 999.99, 000.00, "2.7182818284")
 
-account_test_1.transfer(account_test_2, 50)
-account_test_1.extract
-account_test_2.extract
-account_test_1.withdraw(949.99)
+
+account_test_1.withdraw(5)
+account_test_1.withdraw(5)
 account_test_1.extract
