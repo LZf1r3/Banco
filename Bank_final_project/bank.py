@@ -101,6 +101,12 @@ Lucas_account = Bank('013102008', "Lucas Faiad", 1000, "131008", "cc")
 
 ############################################
 # Code for login page
+
+def historico():
+    with open("Bank_final_project/usos.txt","r") as usos:
+        for linha in usos:
+            print(linha)
+
 def verificando_conta():
     conta_num = str(input("Digite o numero da sua conta: "))
     if conta_num == "cancel":
@@ -131,6 +137,8 @@ def o_que_fazer():
         destino = str(input("Digite o codigo de destino do destinatario: "))
         valor = float(input("Digite o valor da transferencia: R$"))
         pass
+    elif oqf == "historico":
+        historico()
     else:
         programadores = ["Lucas Faiad: +55 49 99162 1223", "LZ: +55 48 99162 1223", "xpto: +55 48 99162 1223"]
         print("Funcao nao encontrada! Contate um dos programadores:")
