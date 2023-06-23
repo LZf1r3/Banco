@@ -1,3 +1,4 @@
 User: Lucas Password: Faiad Tier: 1
 User: Julio Password: Faiad Tier: 1
-
+User: LZ Passwrod: Tier: 1
+User: Faiad Password: Lucas Tier: 1
