@@ -5,9 +5,9 @@ def selecting():
         exit()
     else:
         conta_tit = str(input("Digite o nome do titular da sua conta: "))
-        account_verifier()
-def account_verifier(account):
-    if conta_num == Lucas_account._number and conta_tit == Lucas_account.holder:
+        account_verifier(conta_tit, conta_num)
+def account_verifier(tit, num):
+    if num == Lucas_account._number and conta_tit == Lucas_account.holder:
         import accounts.accounts as account
         for account.accounts(self)
     else:
